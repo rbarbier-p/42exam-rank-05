@@ -13,8 +13,7 @@ TargetGenerator::~TargetGenerator()
 
 void TargetGenerator::learnTargetType(ATarget *target)
 {
-	ATarget *new_target = target->clone(); 
-	this->targets.push_back(new_target);
+	this->targets.push_back(target->clone());
 }
 
 void TargetGenerator::forgetTargetType(std::string const &target_type)
@@ -29,7 +28,7 @@ void TargetGenerator::forgetTargetType(std::string const &target_type)
 
 ATarget *TargetGenerator::createTarget(std::string const &target_type)
 {
-	if (target_type == "") 
+	if (target_type == "Target Practice Dummy") 
 		return new Dummy();
 	if (target_type == "Inconspicuous Red-brick Wall") 
 		return new BrickWall();
