@@ -39,7 +39,7 @@ void Warlock::forgetSpell(std::string spell_name) {
 
 void Warlock::launchSpell(std::string spell_name, const ATarget &target) {
 	for (size_t i = 0; i < this->book->spells.size(); i++) 
-		if (!spell_name.compare(this->book->spells[i]->getName()))
+		if (spell_name == this->book->spells[i]->getName()))
 			this->book->spells[i]->launch(target);
 }
 
